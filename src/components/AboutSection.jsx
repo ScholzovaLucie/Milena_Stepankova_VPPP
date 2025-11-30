@@ -27,39 +27,63 @@ const AboutSection = () => {
           flexDirection: "column",
         }}
       >
-        <Stack spacing={4} sx={{ textAlign: "center", mb: 6 }}>
-          <BrushStroke color="secondary.light">
-            <Typography variant="h2" sx={{ fontSize: { xs: 28, md: 36 } }}>
-              O mě
+        {/* === HLAVNÍ BLOK: OBRÁZEK + TEXT === */}
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          spacing={{ xs: 4, md: 8 }}
+          alignItems="center"
+          justifyContent="center"
+          sx={{ mb: 10, textAlign: "center" }}
+        >
+          {/* OBRÁZEK */}
+          <Box
+            component="img"
+            src="/4FA13EBA-E281-440A-B1D8-A2286ECBA194.png"
+            alt="O mně"
+            sx={{
+              width: { xs: "80%", md: 320 },
+              maxWidth: 350,
+              borderRadius: 3,
+              boxShadow: 3,
+              mx: "auto",
+            }}
+          />
+
+          {/* TEXT */}
+          <Stack spacing={3} sx={{ maxWidth: 600, mx: "auto" }}>
+            <BrushStroke color="secondary.light">
+              <Typography variant="h2" sx={{ fontSize: { xs: 28, md: 36 } }}>
+                O mě
+              </Typography>
+            </BrushStroke>
+
+            <Typography
+              variant="h2"
+              sx={{
+                fontSize: { xs: 28, md: 36 },
+                mx: "auto",
+                maxWidth: 500,
+              }}
+            >
+              Moje cesta k výživovému poradenství
             </Typography>
-          </BrushStroke>
 
-          <Typography
-            variant="h2"
-            sx={{
-              fontSize: { xs: 28, md: 36 },
-              maxWidth: 700,
-              mx: "auto",
-            }}
-          >
-            Moje cesta k výživovému poradenství
-          </Typography>
-
-          <Typography
-            variant="body1"
-            sx={{
-              maxWidth: 650,
-              mx: "auto",
-              opacity: 0.8,
-              fontSize: { xs: 15, md: 17 },
-            }}
-          >
-            Zde si doplníš vlastní úvodní text – příběh o tom, jak jsi začala,
-            tvůj vztah ke psům, motivaci a celkový přístup k výživě.
-          </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                opacity: 0.8,
+                maxWidth: 550,
+                mx: "auto",
+                fontSize: { xs: 15, md: 17 },
+              }}
+            >
+              Zde si doplníš vlastní úvodní text – příběh o tom, jak jsi začala,
+              tvůj vztah ke psům, motivaci a celkový přístup k výživě.
+            </Typography>
+          </Stack>
         </Stack>
 
-        {/* TIMELINE */}
+        {/* === TIMELINE === */}
         <Box
           sx={{
             width: "100%",
@@ -73,6 +97,7 @@ const AboutSection = () => {
             spacing={{ xs: 4, md: 6 }}
             alignItems="center"
             justifyContent="center"
+            textAlign="center"
             sx={{ position: "relative" }}
           >
             {/* Mobile vertical line */}
@@ -94,11 +119,10 @@ const AboutSection = () => {
             <Stack
               sx={{
                 position: "relative",
-                textAlign: { xs: "center", md: "left" },
+                textAlign: "center",
                 maxWidth: 250,
               }}
             >
-              {/* Dot */}
               <Box
                 sx={{
                   width: 16,
@@ -134,7 +158,7 @@ const AboutSection = () => {
             <Stack
               sx={{
                 position: "relative",
-                textAlign: { xs: "center", md: "left" },
+                textAlign: "center",
                 maxWidth: 250,
               }}
             >
@@ -171,7 +195,7 @@ const AboutSection = () => {
             <Stack
               sx={{
                 position: "relative",
-                textAlign: { xs: "center", md: "left" },
+                textAlign: "center",
                 maxWidth: 250,
               }}
             >

@@ -26,11 +26,20 @@ const ContactSection = () => {
         bgcolor: "background.default",
       }}
     >
-      <Container maxWidth="md">
+      <Container
+        maxWidth="md"
+        sx={{
+          textAlign: "center",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Stack
           spacing={3}
           sx={{
             textAlign: "center",
+            justifyContent: "center",
+            alignItems: "center",
             mb: 6,
             maxWidth: 600,
             mx: "auto",
@@ -42,13 +51,17 @@ const ContactSection = () => {
               sx={{
                 fontWeight: 800,
                 fontSize: { xs: 32, md: 42 },
+                textAlign: "center",
               }}
             >
               Napište mi
             </Typography>
           </BrushStroke>
 
-          <Typography variant="body1" sx={{ maxWidth: 500, mx: "auto" }}>
+          <Typography
+            variant="body1"
+            sx={{ maxWidth: 500, mx: "auto", textAlign: "center" }}
+          >
             Stačí vyplnit pár informací a já se vám ozvu s návrhem termínu.
           </Typography>
 

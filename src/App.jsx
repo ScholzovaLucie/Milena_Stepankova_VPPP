@@ -203,7 +203,7 @@ const App = () => {
               poradenství pro psy.
             </Typography>
             <Typography variant="body2">
-              Web vytvořen s láskou ke psům i lidem 🐾
+              Web vytvořen s láskou ke psům i lidem 🐾 Ing. Lucie Nováková
             </Typography>
           </Stack>
         </Container>
