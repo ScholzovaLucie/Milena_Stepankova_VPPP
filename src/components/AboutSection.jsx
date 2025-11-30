@@ -38,7 +38,7 @@ const AboutSection = () => {
           {/* OBRÁZEK */}
           <Box
             component="img"
-            src="/4FA13EBA-E281-440A-B1D8-A2286ECBA194.png"
+            src="4FA13EBA-E281-440A-B1D8-A2286ECBA194.png"
             alt="O mně"
             sx={{
               width: { xs: "80%", md: 320 },

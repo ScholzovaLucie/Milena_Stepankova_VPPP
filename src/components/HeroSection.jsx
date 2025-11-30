@@ -110,7 +110,7 @@ const HeroSection = () => {
                 {/* logo */}
                 <Box
                   component="img"
-                  src="/logo_2.png"
+                  src="logo_2.png"
                   alt="Logo"
                   sx={{
                     position: "absolute",
