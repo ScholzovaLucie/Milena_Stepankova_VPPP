@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/ScholzovaLucie/Milena_Stepankova_VPPP",
+  "homepage": "https://ScholzovaLucie.github.io/Milena_Stepankova_VPPP",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

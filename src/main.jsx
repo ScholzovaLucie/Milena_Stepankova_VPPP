@@ -5,12 +5,15 @@ import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import App from "./App";
 import theme from "./theme";
+import { HashRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <App />
+      <HashRouter>
+        <App />
+      </HashRouter>
     </ThemeProvider>
   </React.StrictMode>
 );
