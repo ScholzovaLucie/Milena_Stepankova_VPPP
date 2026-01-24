@@ -23,11 +23,13 @@ import ServicesSection from "./components/ServicesSection";
 import ContactSection from "./components/ContactSection";
 import PhotoSlider from "./components/PhotoSlider";
 import BcsGuide from "./components/BcsGuide";
+import FaqSection from "./components/FaqSection";
 
 const navItems = [
   { label: "Úvod", href: "#hero" },
   { label: "O mně", href: "#about" },
   { label: "Služby", href: "#services" },
+  { label: "FAQ", href: "#faq" },
   { label: "BCS návody", href: "#bcs-guide" },
   { label: "Fotky", href: "#photos-galery" },
 ];
@@ -44,7 +46,13 @@ const App = () => {
   };
 
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "background.default" }}>
+    <Box
+      sx={{
+        minHeight: "100vh",
+        bgcolor: "background.default",
+        overflowX: "hidden",
+      }}
+    >
       {/* NAVBAR */}
       <AppBar
         position="fixed"
@@ -183,6 +191,7 @@ const App = () => {
         <HeroSection />
         <AboutSection />
         <ServicesSection />
+        <FaqSection />
         <BcsGuide />
         <PhotoSlider />
         <ContactSection />

@@ -37,10 +37,18 @@ export default function BcsGuide() {
         maxWidth="md"
         sx={{
           width: "100%",
-          maxWidth: "100%",
+          overflowX: "hidden",
         }}
       >
-        <Typography variant="h3" sx={{ mb: 4, fontWeight: 700 }}>
+        <Typography
+          variant="h3"
+          sx={{
+            mb: 4,
+            fontWeight: 700,
+            fontSize: { xs: 22, md: 28 },
+            textAlign: "center",
+          }}
+        >
           Body Condition Score – návody
         </Typography>
 
@@ -49,7 +57,8 @@ export default function BcsGuide() {
           sx={{
             display: "grid",
             gridTemplateColumns: { xs: "1fr", md: "repeat(2, minmax(0, 1fr))" },
-            gap: 4,
+            rowGap: { xs: 4, md: 4 },
+            gap: { xs: 3, md: 4 },
             width: "100%",
             justifyItems: "center",
           }}
@@ -71,7 +80,15 @@ export default function BcsGuide() {
                   },
                 }}
               >
-                <Typography variant="h6" sx={{ mb: 1, fontWeight: 600 }}>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    mb: 1,
+                    fontWeight: 600,
+                    fontSize: { xs: 16, md: 18 },
+                    textAlign: { xs: "center", md: "left" },
+                  }}
+                >
                   {g.title}
                 </Typography>
 
@@ -82,11 +99,14 @@ export default function BcsGuide() {
                   alt={g.title}
                   sx={{
                     width: "100%",
+                    maxHeight: { xs: 320, md: "none" },
+                    objectFit: "contain",
                     borderRadius: 2,
                     cursor: "pointer",
                     boxShadow: 3,
                     transition: "0.25s",
                     "&:hover": { opacity: 0.85 },
+                    "&:active": { transform: "scale(0.98)" },
                   }}
                 />
               </Box>
@@ -99,14 +119,16 @@ export default function BcsGuide() {
           <Box
             sx={{
               position: "absolute",
-              top: "50%",
+              top: { xs: "50%", md: "50%" },
               left: "50%",
               transform: "translate(-50%, -50%)",
               bgcolor: "white",
-              p: 2,
+              p: { xs: 1, md: 2 },
               borderRadius: 2,
-              maxWidth: "90vw",
-              maxHeight: "90vh",
+              width: { xs: "100%", md: "auto" },
+              height: { xs: "100%", md: "auto" },
+              maxWidth: "100vw",
+              maxHeight: "100vh",
               boxShadow: 24,
             }}
           >
@@ -116,7 +138,7 @@ export default function BcsGuide() {
               sx={{
                 width: "100%",
                 height: "100%",
-                objectFit: "contain",
+                objectFit: { xs: "contain", md: "contain" },
               }}
             />
           </Box>

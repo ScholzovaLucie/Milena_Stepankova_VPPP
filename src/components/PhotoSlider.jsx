@@ -40,16 +40,16 @@ export default function PhotoSlider() {
       id="photos-galery"
       sx={{
         py: { xs: 8, md: 10 },
-
         position: "relative",
         width: "100%",
-        height: { xs: 260, sm: "100vh" },
-        borderRadius: 2,
+        height: { xs: "75vh", sm: "85vh", md: "100vh" },
         overflow: "hidden",
+        overflowX: "hidden",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         mt: 8,
+        bgcolor: "background.paper",
       }}
     >
       {/* Obrázek */}
@@ -59,7 +59,7 @@ export default function PhotoSlider() {
         sx={{
           maxWidth: "100%",
           maxHeight: "100%",
-          objectFit: "contain",
+          objectFit: { xs: "cover", md: "contain" },
           borderRadius: "15px",
           boxShadow: 3,
           transition: "opacity 0.5s ease",
@@ -71,10 +71,12 @@ export default function PhotoSlider() {
         sx={{
           position: "absolute",
           top: "50%",
-          left: 12,
+          left: { xs: 6, md: 12 },
           transform: "translateY(-50%)",
           bgcolor: "rgba(255,255,255,0.85)",
-          zIndex: 10, // ← DŮLEŽITÁ OPRAVA
+          zIndex: 10,
+          width: { xs: 36, md: 44 },
+          height: { xs: 36, md: 44 },
         }}
       >
         <ArrowBackIosNewIcon />
@@ -85,14 +87,28 @@ export default function PhotoSlider() {
         sx={{
           position: "absolute",
           top: "50%",
-          right: 12,
+          right: { xs: 6, md: 12 },
           transform: "translateY(-50%)",
           bgcolor: "rgba(255,255,255,0.85)",
-          zIndex: 10, // ← DŮLEŽITÁ OPRAVA
+          zIndex: 10,
+          width: { xs: 36, md: 44 },
+          height: { xs: 36, md: 44 },
         }}
       >
         <ArrowForwardIosIcon />
       </IconButton>
+      {/* Gradient for dots contrast */}
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: { xs: 60, md: 80 },
+          zIndex: 5,
+          pointerEvents: "none",
+        }}
+      />
       {/* Tečky */}
       <Stack
         direction="row"
@@ -113,8 +129,8 @@ export default function PhotoSlider() {
               setIndex(i);
             }}
             sx={{
-              width: 10,
-              height: 10,
+              width: { xs: 12, md: 10 },
+              height: { xs: 12, md: 10 },
               borderRadius: "50%",
               cursor: "pointer",
               bgcolor: i === index ? "primary.main" : "rgba(0,0,0,0.25)",

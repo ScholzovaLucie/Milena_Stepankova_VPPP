@@ -17,27 +17,27 @@ import BrushStroke from "./BrushStroke";
 
 const services = [
   {
-    title: "Výživová konzultace na míru",
+    title: "Individuální výživové poradenství pro psy",
     description:
-      "Individuální konzultace zaměřená na konkrétní potřeby vašeho psa – zdravotní stav, kondici, zátěž i životní styl.",
+      "Individuální konzultace zaměřená na konkrétní výživové potřeby vašeho psa – zohledním zdravotní stav psa, jeho kondici, zátěž i životní styl a doporučím vhodné krmení.",
     tag: "individuálně",
   },
   {
-    title: "Analýza současného krmení",
+    title: "Analýza krmení a krmné dávky psa",
     description:
-      "Posouzení aktuální krmné dávky, složení krmiva a energetické potřeby psa včetně návrhu úprav.",
+      "Posoudím aktuální krmnou dávku vašeho psa, složení krmiva i energetickou potřebu psa a navrhnu případné úpravy krmení.",
     tag: "odborný posudek",
   },
   {
-    title: "Úprava hmotnosti a kondice",
+    title: "Úprava hmotnosti a kondice psa",
     description:
-      "Nastavení bezpečného a dlouhodobě udržitelného režimu při hubnutí nebo nabírání hmotnosti.",
+      "Navrhnu bezpečný a dlouhodobě udržitelný režim krmení při hubnutí nebo nabírání hmotnosti psa, včetně kontroly kondice.",
     tag: "dlouhodobě",
   },
   {
-    title: "Přechod na nové krmení",
+    title: "Přechod na nové krmivo a způsob krmení",
     description:
-      "Pomoc s přechodem na jiné krmivo nebo způsob krmení (granule, BARF, vařená strava) bez zbytečné zátěže pro psa.",
+      "Pomohu s přechodem vašeho psa na jiné krmivo nebo způsob krmení (granule, BARF, vařená strava) bez zbytečné zátěže pro psa.",
     tag: "individuální přístup",
   },
 ];
@@ -79,7 +79,7 @@ const ServicesSection = () => {
           <Typography
             variant="h2"
             sx={{
-              fontSize: { xs: 30, md: 40 },
+              fontSize: { xs: 26, md: 40 },
               textTransform: "uppercase",
             }}
           >
@@ -94,22 +94,27 @@ const ServicesSection = () => {
               lineHeight: 1.8,
             }}
           >
-            Pomáhám s výživou vašeho parťáka – ať už se jedná o štěně v růstu,
-            psího sportovce, seniora nebo pracovního psa.
+            Poskytuji výživové poradenství pro psy zaměřené na individuální
+            potřeby každého psa – jeho věk, zdravotní stav, kondici, zátěž i
+            životní styl.
             <br />
             <br />
-            U psů s nadváhou či podváhou připravuji dlouhodobý a udržitelný
-            plán, jehož cílem je dosažení co nejlepší kondice bez zbytečné
+            Pomáhám s výživou vašeho psa – ať už se jedná o štěně v růstu, psího
+            sportovce, seniora nebo pracovního psa.
+            <br />
+            <br />
+            U psů s nadváhou či podváhou připravuji dlouhodobý a udržitelný plán
+            krmení, jehož cílem je dosažení co nejlepší kondice psa bez zbytečné
             zátěže.
             <br />
             <br />
-            Při úvodní konzultaci společně probereme, s čím potřebujete pomoci,
-            a získám od vás všechny důležité informace. Na jejich základě
-            vypočítám energetickou potřebu, nastavím krmnou dávku a posoudím
-            vhodnost současného krmiva.
+            Při úvodní konzultaci společně probereme, s čím ohledně krmení psa
+            potřebujete pomoci, a získám od vás všechny důležité informace. Na
+            jejich základě vypočítám energetickou potřebu psa, nastavím krmnou
+            dávku a posoudím vhodnost současného krmiva.
             <br />
-            <br />V případě potřeby doporučím alternativu, vždy s ohledem na
-            zdravotní stav psa i vaše finanční možnosti.
+            <br />V případě potřeby doporučím alternativu krmení, vždy s ohledem
+            na zdravotní stav psa i vaše finanční možnosti.
           </Typography>
         </Stack>
 
@@ -130,20 +135,24 @@ const ServicesSection = () => {
               key={service.title}
               sx={{
                 display: "flex",
-                justifyContent: "center", // výchozí zarovnání
+                justifyContent: "center",
+                px: { xs: 1, md: 0 },
               }}
             >
               <Box
                 sx={{
                   width: "100%",
-                  maxWidth: 520, // všechny jsou stejně široké
+                  maxWidth: 520,
                   display: "flex",
-                  justifyContent: index % 2 === 0 ? "flex-start" : "flex-end", // zig-zag
+                  justifyContent: {
+                    xs: "center",
+                    md: index % 2 === 0 ? "flex-start" : "flex-end",
+                  },
                 }}
               >
                 <Card
                   sx={{
-                    width: "90%", // záměrně ne 100%, aby zig-zag byl vidět
+                    width: { xs: "100%", md: "90%" },
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
@@ -173,11 +182,23 @@ const ServicesSection = () => {
                       >
                         <PetsIcon fontSize="small" />
                       </Box>
-                      <Typography variant="h6" sx={{ fontWeight: 800 }}>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontWeight: 800,
+                          fontSize: { xs: 16, md: 18 },
+                        }}
+                      >
                         {service.title}
                       </Typography>
                     </Stack>
-                    <Typography variant="body2">
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        fontSize: { xs: 14, md: 15 },
+                        lineHeight: 1.7,
+                      }}
+                    >
                       {service.description}
                     </Typography>
                   </CardContent>

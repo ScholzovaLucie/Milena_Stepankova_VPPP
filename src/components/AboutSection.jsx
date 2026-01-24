@@ -1,8 +1,10 @@
-import React from "react";
-import { Box, Container, Typography, Stack } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Container, Typography, Stack, Button } from "@mui/material";
 import BrushStroke from "./BrushStroke";
 
 const AboutSection = () => {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <Box
       id="about"
@@ -59,14 +61,52 @@ const AboutSection = () => {
                 maxWidth: 550,
                 mx: "auto",
                 fontSize: { xs: 15, md: 17 },
+                whiteSpace: "pre-line",
+                textAlign: { xs: "left", md: "center" },
               }}
             >
-              Jmenuji se Milena Štěpánková a se zvířaty žiji celý život. Psi
-              byli vždy přirozenou součástí naší rodiny a už od dětství jsem se
-              podílela na jejich péči, krmení i výcviku. Právě dlouholetá praxe
-              a osobní zkušenosti mě postupně přivedly k výživovému poradenství,
-              které dnes beru jako své poslání.
+              {`Jmenuji se Milena Štěpánková. Zvířatům se věnuji od útlého dětství. Psi byli
+v naší rodině odjakživa – starala jsem se o ně, krmila je a chodila na
+cvičák.`}
+
+              {expanded &&
+                `
+    
+V roce 1987, když mi bylo 9 let, jsem začala aktivně jezdit na koni.
+Později jsem se vyučila v Národním hřebčíně Kladruby nad Labem v oboru
+„chovatel koní a jezdec z povolání“, kde jsem se poprvé osobně setkala s
+pointery, které choval náš třídní profesor pan Ing. Karel Regner.
+
+O řadu let později, když jsem se rozhodla pořídit si svou první fenku
+pointera, stal se pan Regner znovu mým učitelem a rádcem. Právě tato fenka,
+Cedra z Vinných Tratí (*2012), mě přivedla k hlubšímu zájmu o výživu psů,
+protože byla velmi špatně krmitelná.
+
+Postupem času se počet našich psů rozrostl a v roce 2019 jsem založila
+chovatelskou stanici. V současné době žijeme s osmi psy (7× pointer,
+1× portugalský ohař) a máme odchované čtyři vrhy štěňat pointerů.
+
+Protože vím, jak obrovská a nepřehledná je dnešní nabídka krmiv, rozhodla
+jsem se absolvovat kurz výživového poradenství pro psy u specialistky
+paní Adély Palacké. Kurz jsem úspěšně dokončila a dnes jsem připravena
+pomoci i vám najít správnou výživu pro vašeho psa.
+`}
             </Typography>
+            <Box sx={{ mt: 3 }}>
+              <Button
+                variant="outlined"
+                size="medium"
+                onClick={() => setExpanded(!expanded)}
+                sx={{
+                  borderRadius: 999,
+                  px: 3,
+                  textTransform: "none",
+                  fontWeight: 600,
+                }}
+              >
+                {expanded ? "Zobrazit méně" : "Číst celý příběh"}
+              </Button>
+            </Box>
           </Stack>
         </Stack>
 
@@ -102,7 +142,13 @@ const AboutSection = () => {
             />
 
             {/* ITEM 1 */}
-            <Stack sx={{ textAlign: "center", maxWidth: 250 }}>
+            <Stack
+              sx={{
+                textAlign: "center",
+                maxWidth: { xs: "100%", md: 250 },
+                px: { xs: 2, md: 0 },
+              }}
+            >
               <Box
                 sx={{
                   width: 16,
@@ -113,7 +159,10 @@ const AboutSection = () => {
                   mb: 1,
                 }}
               />
-              <Typography variant="h6" sx={{ fontWeight: 700 }}>
+              <Typography
+                variant="h6"
+                sx={{ fontWeight: 700, fontSize: { xs: 16, md: 18 } }}
+              >
                 1987 – První hlubší kontakt se zvířaty
               </Typography>
               <Typography variant="body2" sx={{ opacity: 0.8 }}>
@@ -135,7 +184,13 @@ const AboutSection = () => {
             />
 
             {/* ITEM 2 */}
-            <Stack sx={{ textAlign: "center", maxWidth: 250 }}>
+            <Stack
+              sx={{
+                textAlign: "center",
+                maxWidth: { xs: "100%", md: 250 },
+                px: { xs: 2, md: 0 },
+              }}
+            >
               <Box
                 sx={{
                   width: 16,
@@ -146,7 +201,10 @@ const AboutSection = () => {
                   mb: 1,
                 }}
               />
-              <Typography variant="h6" sx={{ fontWeight: 700 }}>
+              <Typography
+                variant="h6"
+                sx={{ fontWeight: 700, fontSize: { xs: 16, md: 18 } }}
+              >
                 2012–2019 – Chov a hledání odpovědí
               </Typography>
               <Typography variant="body2" sx={{ opacity: 0.8 }}>
@@ -167,7 +225,13 @@ const AboutSection = () => {
             />
 
             {/* ITEM 3 */}
-            <Stack sx={{ textAlign: "center", maxWidth: 250 }}>
+            <Stack
+              sx={{
+                textAlign: "center",
+                maxWidth: { xs: "100%", md: 250 },
+                px: { xs: 2, md: 0 },
+              }}
+            >
               <Box
                 sx={{
                   width: 16,
@@ -178,7 +242,10 @@ const AboutSection = () => {
                   mb: 1,
                 }}
               />
-              <Typography variant="h6" sx={{ fontWeight: 700 }}>
+              <Typography
+                variant="h6"
+                sx={{ fontWeight: 700, fontSize: { xs: 16, md: 18 } }}
+              >
                 2019 – Výživové poradenství
               </Typography>
               <Typography variant="body2" sx={{ opacity: 0.8 }}>

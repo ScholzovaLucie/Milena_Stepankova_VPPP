@@ -27,17 +27,18 @@ const HeroSection = () => {
     <Box
       id="hero"
       sx={{
-        minHeight: "100vh",
+        minHeight: { xs: "auto", md: "100vh" },
         display: "flex",
         alignItems: "center",
         bgcolor: "background.default",
         py: { xs: 8, md: 12 },
+        pt: { xs: 10, md: 0 },
       }}
     >
       <Container width="100%">
         <Grid
           container
-          spacing={6}
+          spacing={{ xs: 4, md: 6 }}
           alignItems="center"
           justifyContent={{
             xs: "space-around",
@@ -53,7 +54,7 @@ const HeroSection = () => {
             <Box
               sx={{
                 position: "relative",
-                width: { xs: 240, sm: 300, md: 380 },
+                width: { xs: 200, sm: 260, md: 380 },
                 mx: "auto",
               }}
             >
@@ -152,48 +153,69 @@ const HeroSection = () => {
                   VÝŽIVOVÉ PORADENSTVÍ PRO PSY
                 </Typography>
               </BrushStroke>
-
               <Typography
                 variant="h1"
                 sx={{
-                  fontSize: { xs: 32, md: 54 },
+                  fontSize: { xs: 28, sm: 32, md: 54 },
                   lineHeight: 1.1,
                 }}
               >
-                ZDRAVÝ PES,
-                <br />
-                <Typography
-                  component="span"
-                  variant="inherit"
-                  sx={{ color: "secondary.main" }}
-                >
-                  SPOKOJENÝ ŽIVOT.
-                </Typography>
+                Výživové poradenství pro psy
               </Typography>
-
+              <Typography
+                component="span"
+                variant="h4"
+                sx={{
+                  color: "secondary.main",
+                  fontWeight: 800,
+                  fontSize: { xs: 22, md: 32 },
+                  display: "block",
+                  mb: -1,
+                }}
+              >
+                Zdravý pes, spokojený život.
+              </Typography>
               <Typography
                 variant="body1"
-                sx={{ maxWidth: 480, mx: { xs: "auto", md: 0 } }}
+                sx={{
+                  maxWidth: 480,
+                  mx: { xs: "auto", md: 0 },
+                  fontSize: { xs: 15, md: 16 },
+                }}
               >
-                Nejste si jistí, jestli krmíte svého psa správně? Pomohu vám
-                vybrat ideální krmivo podle potřeb vašeho psího parťáka i vašich
-                finančních možností.
+                Nejste si jistí, jestli krmíte svého psa správně? Nabízím
+                individuální výživové poradenství pro psy – pomohu vám s výběrem
+                krmiva, úpravou krmné dávky i řešením nadváhy nebo podváhy, vždy
+                s ohledem na potřeby vašeho psa i vaše finanční možnosti.
               </Typography>
 
               <Stack
                 direction={{ xs: "column", sm: "row" }}
                 spacing={2}
-                sx={{ justifyContent: { xs: "center", md: "flex-start" } }}
+                sx={{
+                  justifyContent: { xs: "center", md: "flex-start" },
+                  width: { xs: "100%", sm: "auto" },
+                }}
               >
                 <Button
                   variant="contained"
                   size="large"
                   endIcon={<PetsIcon />}
                   onClick={handleScrollToContact}
+                  fullWidth={
+                    typeof window !== "undefined" && window.innerWidth < 600
+                  }
                 >
-                  Domluvit konzultaci
+                  Nezávazně se poradit
                 </Button>
-                <Button variant="outlined" size="large" href="#services">
+                <Button
+                  variant="outlined"
+                  size="large"
+                  href="#services"
+                  fullWidth={
+                    typeof window !== "undefined" && window.innerWidth < 600
+                  }
+                >
                   Podívat se na služby
                 </Button>
               </Stack>
