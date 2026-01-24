@@ -17,28 +17,28 @@ import BrushStroke from "./BrushStroke";
 
 const services = [
   {
-    title: "Úvodní konzultace",
+    title: "Výživová konzultace na míru",
     description:
-      "Projdeme společně aktuální krmivo, zdravotní stav i denní režim vašeho psa a nastavíme první doporučení.",
-    tag: "60 minut",
+      "Individuální konzultace zaměřená na konkrétní potřeby vašeho psa – zdravotní stav, kondici, zátěž i životní styl.",
+    tag: "individuálně",
   },
   {
-    title: "Dlouhodobý výživový plán",
+    title: "Analýza současného krmení",
     description:
-      "Podrobný plán krok za krokem, včetně doporučení konkrétních krmiv a nastavení porcí.",
-    tag: "balíček",
+      "Posouzení aktuální krmné dávky, složení krmiva a energetické potřeby psa včetně návrhu úprav.",
+    tag: "odborný posudek",
   },
   {
-    title: "Redukce váhy / nabrání hmotnosti",
+    title: "Úprava hmotnosti a kondice",
     description:
-      "Citlivé hubnutí nebo přibírání bez stresu, ladění porcí a pohybového režimu psa.",
-    tag: "speciální režim",
+      "Nastavení bezpečného a dlouhodobě udržitelného režimu při hubnutí nebo nabírání hmotnosti.",
+    tag: "dlouhodobě",
   },
   {
-    title: "Výběr krmiva & přechod",
+    title: "Přechod na nové krmení",
     description:
-      "Pomohu s výběrem vhodného krmiva (granule, BARF, vařená strava) a nastavením bezpečného přechodu.",
-    tag: "online i osobně",
+      "Pomoc s přechodem na jiné krmivo nebo způsob krmení (granule, BARF, vařená strava) bez zbytečné zátěže pro psa.",
+    tag: "individuální přístup",
   },
 ];
 
@@ -83,15 +83,33 @@ const ServicesSection = () => {
               textTransform: "uppercase",
             }}
           >
-            Co pro vás můžu udělat
+            S čím vám mohu pomoci
           </Typography>
 
           <Typography
             variant="body1"
-            sx={{ maxWidth: 360, color: "rgba(255,255,255,0.9)" }}
+            sx={{
+              maxWidth: 520,
+              color: "rgba(255,255,255,0.9)",
+              lineHeight: 1.8,
+            }}
           >
-            Každý pes je jiný. Balíčky proto vždy přizpůsobujeme konkrétním
-            potřebám – od štěňat až po psí seniory.
+            Pomáhám s výživou vašeho parťáka – ať už se jedná o štěně v růstu,
+            psího sportovce, seniora nebo pracovního psa.
+            <br />
+            <br />
+            U psů s nadváhou či podváhou připravuji dlouhodobý a udržitelný
+            plán, jehož cílem je dosažení co nejlepší kondice bez zbytečné
+            zátěže.
+            <br />
+            <br />
+            Při úvodní konzultaci společně probereme, s čím potřebujete pomoci,
+            a získám od vás všechny důležité informace. Na jejich základě
+            vypočítám energetickou potřebu, nastavím krmnou dávku a posoudím
+            vhodnost současného krmiva.
+            <br />
+            <br />V případě potřeby doporučím alternativu, vždy s ohledem na
+            zdravotní stav psa i vaše finanční možnosti.
           </Typography>
         </Stack>
 
@@ -174,13 +192,6 @@ const ServicesSection = () => {
                     }}
                   >
                     <Chip label={service.tag} size="small" color="primary" />
-                    <Button
-                      size="small"
-                      href="#contact"
-                      sx={{ fontWeight: 700 }}
-                    >
-                      Chci tuto službu
-                    </Button>
                   </CardActions>
                 </Card>
               </Box>

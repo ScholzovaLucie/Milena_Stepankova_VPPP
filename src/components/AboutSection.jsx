@@ -2,13 +2,6 @@ import React from "react";
 import { Box, Container, Typography, Stack } from "@mui/material";
 import BrushStroke from "./BrushStroke";
 
-import Timeline from "@mui/lab/Timeline";
-import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
-
 const AboutSection = () => {
   return (
     <Box
@@ -25,42 +18,33 @@ const AboutSection = () => {
           alignItems: "center",
           justifyContent: "center",
           flexDirection: "column",
+          textAlign: "center",
         }}
       >
-        {/* === HLAVNÍ BLOK: OBRÁZEK + TEXT === */}
+        {/* === HLAVNÍ BLOK: TEXT === */}
         <Stack
           direction={{ xs: "column", md: "row" }}
           spacing={{ xs: 4, md: 8 }}
           alignItems="center"
           justifyContent="center"
-          sx={{ mb: 10, textAlign: "center" }}
+          sx={{ mb: 10 }}
         >
-          {/* OBRÁZEK */}
-          <Box
-            component="img"
-            src="4FA13EBA-E281-440A-B1D8-A2286ECBA194.png"
-            alt="O mně"
-            sx={{
-              width: { xs: "80%", md: 320 },
-              maxWidth: 350,
-              borderRadius: 3,
-              boxShadow: 3,
-              mx: "auto",
-            }}
-          />
-
-          {/* TEXT */}
-          <Stack spacing={3} sx={{ maxWidth: 600, mx: "auto" }}>
+          <Stack
+            spacing={3}
+            alignItems="center"
+            justifyContent="center"
+            sx={{ maxWidth: 600, mx: "auto" }}
+          >
             <BrushStroke color="secondary.light">
               <Typography variant="h2" sx={{ fontSize: { xs: 28, md: 36 } }}>
-                O mě
+                O mně
               </Typography>
             </BrushStroke>
 
             <Typography
               variant="h2"
               sx={{
-                fontSize: { xs: 28, md: 36 },
+                fontSize: { xs: 26, md: 34 },
                 mx: "auto",
                 maxWidth: 500,
               }}
@@ -71,14 +55,17 @@ const AboutSection = () => {
             <Typography
               variant="body1"
               sx={{
-                opacity: 0.8,
+                opacity: 0.85,
                 maxWidth: 550,
                 mx: "auto",
                 fontSize: { xs: 15, md: 17 },
               }}
             >
-              Zde si doplníš vlastní úvodní text – příběh o tom, jak jsi začala,
-              tvůj vztah ke psům, motivaci a celkový přístup k výživě.
+              Jmenuji se Milena Štěpánková a se zvířaty žiji celý život. Psi
+              byli vždy přirozenou součástí naší rodiny a už od dětství jsem se
+              podílela na jejich péči, krmení i výcviku. Právě dlouholetá praxe
+              a osobní zkušenosti mě postupně přivedly k výživovému poradenství,
+              které dnes beru jako své poslání.
             </Typography>
           </Stack>
         </Stack>
@@ -97,7 +84,6 @@ const AboutSection = () => {
             spacing={{ xs: 4, md: 6 }}
             alignItems="center"
             justifyContent="center"
-            textAlign="center"
             sx={{ position: "relative" }}
           >
             {/* Mobile vertical line */}
@@ -116,13 +102,7 @@ const AboutSection = () => {
             />
 
             {/* ITEM 1 */}
-            <Stack
-              sx={{
-                position: "relative",
-                textAlign: "center",
-                maxWidth: 250,
-              }}
-            >
+            <Stack sx={{ textAlign: "center", maxWidth: 250 }}>
               <Box
                 sx={{
                   width: 16,
@@ -133,17 +113,17 @@ const AboutSection = () => {
                   mb: 1,
                 }}
               />
-
               <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                2015 – První zkušenosti
+                1987 – První hlubší kontakt se zvířaty
               </Typography>
               <Typography variant="body2" sx={{ opacity: 0.8 }}>
-                Sem si doplníš text. Například: Začala jsem pomáhat prvním
-                známým řešit potravní intoleranci jejich psů…
+                Aktivní práce se zvířaty od dětství, péče o psy a začátky
+                jezdecké dráhy, které položily základ k dalšímu profesnímu
+                směřování.
               </Typography>
             </Stack>
 
-            {/* Connector line (desktop) */}
+            {/* Connector */}
             <Box
               sx={{
                 display: { xs: "none", md: "block" },
@@ -155,13 +135,7 @@ const AboutSection = () => {
             />
 
             {/* ITEM 2 */}
-            <Stack
-              sx={{
-                position: "relative",
-                textAlign: "center",
-                maxWidth: 250,
-              }}
-            >
+            <Stack sx={{ textAlign: "center", maxWidth: 250 }}>
               <Box
                 sx={{
                   width: 16,
@@ -173,14 +147,15 @@ const AboutSection = () => {
                 }}
               />
               <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                2019 – Studium výživy psů
+                2012–2019 – Chov a hledání odpovědí
               </Typography>
               <Typography variant="body2" sx={{ opacity: 0.8 }}>
-                Vlož vlastní text o studiu, kurzech, získání certifikací…
+                Pořízení první fenky pointera a vlastní chovatelská praxe. Právě
+                problémy s krmením otevřely cestu k hlubšímu studiu výživy psů.
               </Typography>
             </Stack>
 
-            {/* Connector line (desktop) */}
+            {/* Connector */}
             <Box
               sx={{
                 display: { xs: "none", md: "block" },
@@ -192,13 +167,7 @@ const AboutSection = () => {
             />
 
             {/* ITEM 3 */}
-            <Stack
-              sx={{
-                position: "relative",
-                textAlign: "center",
-                maxWidth: 250,
-              }}
-            >
+            <Stack sx={{ textAlign: "center", maxWidth: 250 }}>
               <Box
                 sx={{
                   width: 16,
@@ -210,11 +179,12 @@ const AboutSection = () => {
                 }}
               />
               <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                2023 – Konzultace na plný úvazek
+                2019 – Výživové poradenství
               </Typography>
               <Typography variant="body2" sx={{ opacity: 0.8 }}>
-                Popíšeš, jak jsi začala pracovat sama na sebe, otevřela
-                konzultace a začala pomáhat více rodinám.
+                Absolvování kurzu výživového poradenství pro psy a zahájení
+                konzultací s cílem pomáhat majitelům najít správnou výživu pro
+                jejich psy.
               </Typography>
             </Stack>
           </Stack>

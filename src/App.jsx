@@ -21,11 +21,15 @@ import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import ServicesSection from "./components/ServicesSection";
 import ContactSection from "./components/ContactSection";
+import PhotoSlider from "./components/PhotoSlider";
+import BcsGuide from "./components/BcsGuide";
 
 const navItems = [
   { label: "Úvod", href: "#hero" },
   { label: "O mně", href: "#about" },
   { label: "Služby", href: "#services" },
+  { label: "BCS návody", href: "#bcs-guide" },
+  { label: "Fotky", href: "#photos-galery" },
 ];
 
 const App = () => {
@@ -179,6 +183,8 @@ const App = () => {
         <HeroSection />
         <AboutSection />
         <ServicesSection />
+        <BcsGuide />
+        <PhotoSlider />
         <ContactSection />
       </Box>
 
