@@ -15,30 +15,38 @@ import {
 import PetsIcon from "@mui/icons-material/Pets";
 import BrushStroke from "./BrushStroke";
 
-const services = [
+export const services = [
   {
     title: "Individuální výživové poradenství pro psy",
-    description:
-      "Individuální konzultace zaměřená na konkrétní výživové potřeby vašeho psa – zohledním zdravotní stav psa, jeho kondici, zátěž i životní styl a doporučím vhodné krmení.",
+    description: (
+      <Typography component="ul" sx={{ pl: 2, m: 0 }}>
+        <li>Individuální konzultace podle potřeb vašeho psa</li>
+        <li>Zohlednění zdravotního stavu, kondice, zátěže i životního stylu</li>
+        <li>Kontrola krmné dávky a složení krmiva</li>
+        <li>Výpočet energetické potřeby psa</li>
+        <li>Návrh konkrétních úprav krmení</li>
+        <li>Pomoc s přechodem na jiné krmivo (granule, BARF, vařená strava)</li>
+        <li>Kontrolní kroky po 14 dnech a po měsíci</li>
+      </Typography>
+    ),
     tag: "individuálně",
-  },
-  {
-    title: "Analýza krmení a krmné dávky psa",
-    description:
-      "Posoudím aktuální krmnou dávku vašeho psa, složení krmiva i energetickou potřebu psa a navrhnu případné úpravy krmení.",
-    tag: "odborný posudek",
+    price: "1 000 Kč",
   },
   {
     title: "Úprava hmotnosti a kondice psa",
-    description:
-      "Navrhnu bezpečný a dlouhodobě udržitelný režim krmení při hubnutí nebo nabírání hmotnosti psa, včetně kontroly kondice.",
+    description: (
+      <Typography component="ul" sx={{ pl: 2, m: 0 }}>
+        <li>Plán krmení pro hubnutí</li>
+        <li>Plán krmení pro nabírání hmotnosti</li>
+        <li>Dlouhodobě udržitelný režim</li>
+        <li>Průběžná kontrola kondice psa</li>
+        <li>Neomezené konzultace po donu 1,5 měsíce.</li>
+        <li>Zhodnocení průběhu změny a kondice po změně.</li>
+        <li>V případě potřeby konzultace po dobu 3 měsíců.</li>
+      </Typography>
+    ),
     tag: "dlouhodobě",
-  },
-  {
-    title: "Přechod na nové krmivo a způsob krmení",
-    description:
-      "Pomohu s přechodem vašeho psa na jiné krmivo nebo způsob krmení (granule, BARF, vařená strava) bez zbytečné zátěže pro psa.",
-    tag: "individuální přístup",
+    price: "2 000 Kč",
   },
 ];
 
@@ -156,13 +164,24 @@ const ServicesSection = () => {
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
-                    borderRadius: 5,
-                    bgcolor: "rgba(255,255,255,0.96)",
+                    borderRadius: 6,
+                    bgcolor: "rgba(255,255,255,0.98)",
                     color: "text.primary",
-                    boxShadow: 6,
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.18)",
+                    transition: "transform 0.25s ease, box-shadow 0.25s ease",
+                    "&:hover": {
+                      transform: "translateY(-6px)",
+                      boxShadow: "0 28px 60px rgba(0,0,0,0.22)",
+                    },
                   }}
                 >
-                  <CardContent sx={{ flexGrow: 1 }}>
+                  <CardContent
+                    sx={{
+                      flexGrow: 1,
+                      px: { xs: 2.5, md: 3 },
+                      py: { xs: 2.5, md: 3 },
+                    }}
+                  >
                     <Stack
                       direction="row"
                       spacing={1}
@@ -171,13 +190,16 @@ const ServicesSection = () => {
                     >
                       <Box
                         sx={{
-                          width: 32,
-                          height: 32,
+                          width: 38,
+                          height: 38,
                           borderRadius: "50%",
-                          bgcolor: "primary.light",
+                          background:
+                            "linear-gradient(135deg, #ffb74d, #f57c00)",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
+                          color: "#1a1a1a",
+                          boxShadow: "0 6px 16px rgba(0,0,0,0.25)",
                         }}
                       >
                         <PetsIcon fontSize="small" />
@@ -187,32 +209,60 @@ const ServicesSection = () => {
                         sx={{
                           fontWeight: 800,
                           fontSize: { xs: 16, md: 18 },
+                          lineHeight: 1.3,
+                          letterSpacing: 0.3,
                         }}
                       >
                         {service.title}
                       </Typography>
                     </Stack>
-                    <Typography
-                      variant="body2"
+                    <Box
                       sx={{
                         fontSize: { xs: 14, md: 15 },
                         lineHeight: 1.7,
                       }}
                     >
                       {service.description}
-                    </Typography>
+                    </Box>
                   </CardContent>
 
                   <CardActions
                     sx={{
-                      px: 2.5,
-                      pb: 2.5,
-                      pt: 0,
+                      px: { xs: 2.5, md: 3 },
+                      pb: { xs: 2.5, md: 3 },
+                      pt: 1,
                       justifyContent: "space-between",
                       alignItems: "center",
+                      borderTop: "1px solid rgba(0,0,0,0.08)",
                     }}
                   >
-                    <Chip label={service.tag} size="small" color="primary" />
+                    <Stack
+                      direction="row"
+                      spacing={1.5}
+                      alignItems="center"
+                      sx={{ width: "100%", justifyContent: "space-between" }}
+                    >
+                      <Chip
+                        label={service.tag}
+                        size="small"
+                        color="primary"
+                        sx={{ fontWeight: 600 }}
+                      />
+                      <Box
+                        sx={{
+                          px: 1.5,
+                          py: 0.5,
+                          borderRadius: 3,
+                          bgcolor: "primary.main",
+                          color: "primary.contrastText",
+                          fontWeight: 800,
+                          fontSize: 14,
+                          boxShadow: "0 6px 16px rgba(0,0,0,0.25)",
+                        }}
+                      >
+                        {service.price}
+                      </Box>
+                    </Stack>
                   </CardActions>
                 </Card>
               </Box>

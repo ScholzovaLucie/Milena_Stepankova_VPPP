@@ -3,13 +3,53 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useEffect, useState } from "react";
 
-import photo1 from "/public/photos/4FA13EBA-E281-440A-B1D8-A2286ECBA194.png";
-import photo2 from "/public/photos/06B4D1B6-BA34-4B54-AFA6-CCC5F0BA774D.png";
-import photo3 from "/public/photos/107CCDB0-67F4-4FEF-AA51-F77437982E99.png";
-import photo4 from "/public/photos/9242A66D-5612-4BFD-BB8C-45D3C454AE87.png";
-import photo5 from "/public/photos/E4670F06-80EF-4770-94B7-A34A3A2FD607.png";
+import photo1 from "/public/photos/foto_1.png";
+import photo2 from "/public/photos/foto_2.png";
+import photo3 from "/public/photos/foto_3.png";
+import photo4 from "/public/photos/foto_4.png";
+import photo5 from "/public/photos/foto_5.png";
+import photo6 from "/public/photos/foto_6.png";
+import photo7 from "/public/photos/foto_7.png";
+import photo8 from "/public/photos/foto_8.png";
+import photo9 from "/public/photos/foto_9.png";
+import photo10 from "/public/photos/foto_10.png";
+import photo11 from "/public/photos/foto_11.png";
+import photo12 from "/public/photos/foto_12.png";
+import photo13 from "/public/photos/foto_13.png";
+import photo14 from "/public/photos/foto_14.png";
+import photo15 from "/public/photos/foto_15.png";
+import photo16 from "/public/photos/foto_16.png";
+import photo17 from "/public/photos/foto_17.png";
+import photo18 from "/public/photos/foto_18.png";
+import photo19 from "/public/photos/foto_19.png";
+import photo20 from "/public/photos/foto_20.png";
+import photo21 from "/public/photos/foto_21.png";
+import photo22 from "/public/photos/foto_22.png";
 
-const photos = [photo1, photo2, photo3, photo4, photo5];
+const photos = [
+  photo1,
+  photo2,
+  photo3,
+  photo4,
+  photo5,
+  photo6,
+  photo7,
+  photo8,
+  photo9,
+  photo10,
+  photo11,
+  photo12,
+  photo13,
+  photo14,
+  photo15,
+  photo16,
+  photo17,
+  photo18,
+  photo19,
+  photo20,
+  photo21,
+  photo22,
+];
 
 export default function PhotoSlider() {
   const [index, setIndex] = useState(0);

@@ -9,34 +9,60 @@ import {
   TextField,
   Button,
   Stack,
+  Checkbox,
+  FormControlLabel,
+  Link,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  Alert,
 } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import BrushStroke from "./BrushStroke";
+import { services } from "./ServicesSection";
 
 const ContactSection = () => {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [consent, setConsent] = useState(false);
+  const [serviceInterest, setServiceInterest] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const resetAfterSend = () => {
+    setConsent(false);
+    setServiceInterest("");
+    setSent(false);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
+    setErrorMsg("");
 
     const form = e.target;
 
     try {
       await emailjs.sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_chp3e09",
+        "template_9lbquzg",
         form,
-        "YOUR_PUBLIC_KEY"
+        "rs4VbdOfi0NbYm8Vu"
       );
       setSent(true);
       form.reset();
+      setConsent(false);
+      setServiceInterest("");
     } catch (err) {
-      alert("Zprávu se nepodařilo odeslat. Zkuste to prosím znovu.");
+      setErrorMsg(
+        "Zprávu se nepodařilo odeslat. Prosím zkuste to znovu za chvíli nebo použijte e-mail / telefon."
+      );
     } finally {
       setSending(false);
+      setTimeout(() => {
+        setSent(false);
+      }, 4000);
     }
   };
 
@@ -107,7 +133,7 @@ const ContactSection = () => {
               sx={{ py: 0.5 }}
             >
               <PhoneIcon />
-              <Typography variant="body2">+420 111 222 333</Typography>
+              <Typography variant="body2">+420 777 015 493</Typography>
             </Stack>
 
             <Stack
@@ -117,7 +143,7 @@ const ContactSection = () => {
               sx={{ py: 0.5 }}
             >
               <EmailIcon />
-              <Typography variant="body2">email@seznam.cz</Typography>
+              <Typography variant="body2">alibaba1@mujmail.cz</Typography>
             </Stack>
           </Stack>
         </Stack>
@@ -142,6 +168,9 @@ const ContactSection = () => {
               required
               autoComplete="name"
               name="name"
+              onChange={() => {
+                if (sent) setSent(false);
+              }}
             />
             <TextField
               fullWidth
@@ -159,6 +188,31 @@ const ContactSection = () => {
               name="phone"
             />
             <TextField fullWidth label="Věk / plemeno psa" name="dog_info" />
+            <FormControl fullWidth>
+              <InputLabel id="service-interest-label">
+                O jakou službu máte zájem?
+              </InputLabel>
+              <Select
+                labelId="service-interest-label"
+                label="O jakou službu máte zájem?"
+                name="service_interest"
+                value={serviceInterest}
+                onChange={(e) => {
+                  setServiceInterest(e.target.value);
+                  if (sent) setSent(false);
+                }}
+                required
+              >
+                {services.map((s) => (
+                  <MenuItem key={s.title} value={s.title}>
+                    {s.title} — {s.price}
+                  </MenuItem>
+                ))}
+                <MenuItem value="Nejsem si jistý / potřebuji poradit">
+                  Nejsem si jistý / potřebuji poradit
+                </MenuItem>
+              </Select>
+            </FormControl>
             <TextField
               fullWidth
               label="Co právě řešíte?"
@@ -166,6 +220,40 @@ const ContactSection = () => {
               minRows={4}
               inputMode="text"
               name="message"
+            />
+            <FormControlLabel
+              sx={{
+                mt: 1,
+                alignItems: "flex-start",
+              }}
+              control={
+                <Checkbox
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  required
+                  sx={{ mt: 0.4 }}
+                />
+              }
+              label={
+                <Box sx={{ lineHeight: 1.5 }}>
+                  <Typography
+                    variant="body2"
+                    component="span"
+                    sx={{ fontWeight: 500 }}
+                  >
+                    Souhlasím se zpracováním údajů a&nbsp;
+                  </Typography>
+                  <Link
+                    href="/informovany-souhlas.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    underline="always"
+                    sx={{ fontSize: 14, fontWeight: 600 }}
+                  >
+                    &nbsp;informovaným souhlasem (PDF)&nbsp;
+                  </Link>
+                </Box>
+              }
             />
             <Button
               type="submit"
@@ -176,7 +264,7 @@ const ContactSection = () => {
                 py: 1.5,
                 fontSize: { xs: 16, md: 16 },
               }}
-              disabled={sending || sent}
+              disabled={sending || !consent}
             >
               {sending
                 ? "Odesílám…"
@@ -201,6 +289,11 @@ const ContactSection = () => {
               Odpovídám obvykle do 1 pracovního dne.
             </Typography>
           </Stack>
+        )}
+        {errorMsg && (
+          <Alert severity="error" sx={{ mt: 2 }}>
+            {errorMsg}
+          </Alert>
         )}
       </Container>
     </Box>
