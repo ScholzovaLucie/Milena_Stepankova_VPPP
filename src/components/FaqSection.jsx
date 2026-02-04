@@ -90,6 +90,7 @@ const FaqSection = () => {
           <Accordion
             key={index}
             disableGutters
+            square
             sx={{
               mb: 1.5,
               borderRadius: 3,
@@ -98,15 +99,25 @@ const FaqSection = () => {
               "&.Mui-expanded": {
                 boxShadow: 4,
               },
+              overflow: "hidden",
             }}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               sx={{
                 px: 2.5,
-                py: { xs: 1.5, md: 2 },
+                borderTopLeftRadius: 12,
+                borderTopRightRadius: 12,
+                py: { xs: 1.5, md: 1.5 },
+                minHeight: "unset",
+                "&.Mui-expanded": {
+                  minHeight: "unset",
+                },
                 "& .MuiAccordionSummary-content": {
                   my: 0,
+                },
+                "& .MuiAccordionSummary-content.Mui-expanded": {
+                  margin: 0,
                 },
               }}
             >

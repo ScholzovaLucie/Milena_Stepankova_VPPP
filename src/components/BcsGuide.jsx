@@ -119,26 +119,44 @@ export default function BcsGuide() {
           <Box
             sx={{
               position: "absolute",
-              top: { xs: "50%", md: "50%" },
+              top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
               bgcolor: "white",
               p: { xs: 1, md: 2 },
               borderRadius: 2,
-              width: { xs: "100%", md: "auto" },
-              height: { xs: "100%", md: "auto" },
-              maxWidth: "100vw",
-              maxHeight: "100vh",
+              width: { xs: "92vw", md: "auto" },
+              maxWidth: "900px",
+              maxHeight: "90vh",
               boxShadow: 24,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
+            <Box
+              onClick={() => setOpen(false)}
+              sx={{
+                position: "absolute",
+                top: 8,
+                right: 12,
+                fontSize: 28,
+                fontWeight: 700,
+                cursor: "pointer",
+                zIndex: 10,
+                userSelect: "none",
+              }}
+            >
+              ×
+            </Box>
             <Box
               component="img"
               src={preview}
               sx={{
                 width: "100%",
                 height: "100%",
-                objectFit: { xs: "contain", md: "contain" },
+                maxHeight: "88vh",
+                objectFit: "contain",
               }}
             />
           </Box>

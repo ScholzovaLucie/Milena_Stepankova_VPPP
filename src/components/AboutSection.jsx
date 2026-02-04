@@ -132,6 +132,7 @@ pomoci i vám najít správnou výživu pro vašeho psa.
                 bgcolor: "secondary.main",
                 transform: "translateX(-50%)",
                 opacity: 0.4,
+                zIndex: 0,
               }}
             />
 
@@ -141,6 +142,11 @@ pomoci i vám najít správnou výživu pro vašeho psa.
                 textAlign: "center",
                 maxWidth: { xs: "100%", md: 250 },
                 px: { xs: 2, md: 0 },
+                position: "relative",
+                zIndex: 1,
+                bgcolor: "background.paper",
+                px: 1,
+                borderRadius: 1,
               }}
             >
               <Box
@@ -183,6 +189,11 @@ pomoci i vám najít správnou výživu pro vašeho psa.
                 textAlign: "center",
                 maxWidth: { xs: "100%", md: 250 },
                 px: { xs: 2, md: 0 },
+                position: "relative",
+                zIndex: 1,
+                bgcolor: "background.paper",
+                px: 1,
+                borderRadius: 1,
               }}
             >
               <Box
@@ -197,11 +208,24 @@ pomoci i vám najít správnou výživu pro vašeho psa.
               />
               <Typography
                 variant="h6"
-                sx={{ fontWeight: 700, fontSize: { xs: 16, md: 18 } }}
+                sx={{
+                  fontWeight: 700,
+                  fontSize: { xs: 16, md: 18 },
+                  bgcolor: "background.paper",
+                  px: 1,
+                  borderRadius: 1,
+                }}
               >
                 2012–2019 – Chov a hledání odpovědí
               </Typography>
-              <Typography variant="body2" sx={{ opacity: 0.8 }}>
+              <Typography
+                variant="body2"
+                sx={{
+                  bgcolor: "background.paper",
+                  px: 1,
+                  borderRadius: 1,
+                }}
+              >
                 Pořízení první fenky pointera a vlastní chovatelská praxe. Právě
                 problémy s krmením otevřely cestu k hlubšímu studiu výživy psů.
               </Typography>
@@ -224,6 +248,11 @@ pomoci i vám najít správnou výživu pro vašeho psa.
                 textAlign: "center",
                 maxWidth: { xs: "100%", md: 250 },
                 px: { xs: 2, md: 0 },
+                position: "relative",
+                zIndex: 1,
+                bgcolor: "background.paper",
+                px: 1,
+                borderRadius: 1,
               }}
             >
               <Box
