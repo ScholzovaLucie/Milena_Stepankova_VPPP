@@ -13,7 +13,6 @@ import {
   Stack,
 } from "@mui/material";
 import PetsIcon from "@mui/icons-material/Pets";
-import BrushStroke from "./BrushStroke";
 
 export const services = [
   {

@@ -13,7 +13,6 @@ import PetsIcon from "@mui/icons-material/Pets";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
-import BrushStroke from "./BrushStroke";
 
 const HeroSection = () => {
   const handleScrollToContact = () => {
@@ -145,14 +144,12 @@ const HeroSection = () => {
             }}
           >
             <Stack spacing={3}>
-              <BrushStroke>
-                <Typography
-                  variant="overline"
-                  sx={{ fontSize: 14, fontWeight: 800, letterSpacing: "0.2em" }}
-                >
-                  VÝŽIVOVÉ PORADENSTVÍ PRO PSY
-                </Typography>
-              </BrushStroke>
+              <Typography
+                variant="overline"
+                sx={{ fontSize: 14, fontWeight: 800, letterSpacing: "0.2em" }}
+              >
+                VÝŽIVOVÉ PORADENSTVÍ PRO PSY
+              </Typography>
               <Typography
                 variant="h1"
                 sx={{

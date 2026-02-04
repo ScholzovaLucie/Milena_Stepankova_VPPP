@@ -20,7 +20,6 @@ import {
 } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
-import BrushStroke from "./BrushStroke";
 import { services } from "./ServicesSection";
 
 const ContactSection = () => {
@@ -93,18 +92,16 @@ const ContactSection = () => {
             mx: "auto",
           }}
         >
-          <BrushStroke color="secondary.light">
-            <Typography
-              variant="h2"
-              sx={{
-                fontWeight: 800,
-                fontSize: { xs: 28, md: 42 },
-                textAlign: "center",
-              }}
-            >
-              Napište mi
-            </Typography>
-          </BrushStroke>
+          <Typography
+            variant="h2"
+            sx={{
+              fontWeight: 800,
+              fontSize: { xs: 28, md: 42 },
+              textAlign: "center",
+            }}
+          >
+            Napište mi
+          </Typography>
 
           <Typography
             variant="body1"

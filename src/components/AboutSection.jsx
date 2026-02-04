@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Box, Container, Typography, Stack, Button } from "@mui/material";
-import BrushStroke from "./BrushStroke";
 
 const AboutSection = () => {
   const [expanded, setExpanded] = useState(false);
@@ -37,11 +36,9 @@ const AboutSection = () => {
             justifyContent="center"
             sx={{ maxWidth: 600, mx: "auto" }}
           >
-            <BrushStroke color="secondary.light">
-              <Typography variant="h2" sx={{ fontSize: { xs: 28, md: 36 } }}>
-                O mně
-              </Typography>
-            </BrushStroke>
+            <Typography variant="h2" sx={{ fontSize: { xs: 28, md: 36 } }}>
+              O mně
+            </Typography>
 
             <Typography
               variant="h2"
