@@ -25,31 +25,29 @@ const HeroSection = () => {
   return (
     <Box
       id="hero"
+      maxWidth={"100%"}
       sx={{
         minHeight: { xs: "auto", md: "100vh" },
-        display: "flex",
-        alignItems: "center",
+        maxWidth: "100%",
+        width: "100%",
         bgcolor: "background.default",
         py: { xs: 8, md: 12 },
         pt: { xs: 10, md: 0 },
+        display: "flex",
+        alignItems: "center",
       }}
     >
-      <Container width="100%">
+      <Container maxWidth="100%">
         <Grid
           container
-          spacing={{ xs: 4, md: 6 }}
+          direction={{ xs: "column", sm: "row" }}
+          wrap={{ xs: "wrap", sm: "nowrap" }}
+          spacing={{ xs: 4, md: 8 }}
           alignItems="center"
-          justifyContent={{
-            xs: "space-around",
-            md: "center",
-          }}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-          }}
+          justifyContent="center"
         >
           {/* LOGO — na mobilu první, na desktopu druhé */}
-          <Grid item>
+          <Grid item xs={12} sm={6}>
             <Box
               sx={{
                 position: "relative",
@@ -137,25 +135,22 @@ const HeroSection = () => {
           <Grid
             item
             xs={12}
-            md={6}
-            order={{ xs: 1, md: 0 }}
+            sm={6}
             sx={{
               textAlign: { xs: "center", md: "left" },
+              display: "flex",
+              justifyContent: "center",
             }}
           >
-            <Stack spacing={3}>
-              <Typography
-                variant="overline"
-                sx={{ fontSize: 14, fontWeight: 800, letterSpacing: "0.2em" }}
-              >
-                VÝŽIVOVÉ PORADENSTVÍ PRO PSY
-              </Typography>
+            <Stack spacing={3} maxWidth={"100%"}>
               <Typography
                 variant="h1"
                 sx={{
                   fontSize: { xs: 28, sm: 32, md: 54 },
                   lineHeight: 1.1,
+                  maxWidth: "100%",
                 }}
+                maxWidth={"100%"}
               >
                 Výživové poradenství pro psy
               </Typography>
@@ -215,24 +210,6 @@ const HeroSection = () => {
                 >
                   Podívat se na služby
                 </Button>
-              </Stack>
-
-              <Stack
-                direction="row"
-                spacing={1.5}
-                alignItems="center"
-                sx={{ justifyContent: { xs: "center", md: "flex-start" } }}
-              >
-                <Typography variant="body2">Sledujte mě</Typography>
-                <IconButton size="small">
-                  <FacebookIcon />
-                </IconButton>
-                <IconButton size="small">
-                  <InstagramIcon />
-                </IconButton>
-                <IconButton size="small">
-                  <EmailIcon />
-                </IconButton>
               </Stack>
             </Stack>
           </Grid>

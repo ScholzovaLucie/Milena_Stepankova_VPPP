@@ -74,7 +74,7 @@ const ServicesSection = () => {
         }}
       />
 
-      <Container maxWidth="lg" sx={{ position: "relative" }}>
+      <Container sx={{ position: "relative" }}>
         <Stack
           direction={{ xs: "column", md: "column" }}
           spacing={3}
@@ -96,7 +96,6 @@ const ServicesSection = () => {
           <Typography
             variant="body1"
             sx={{
-              maxWidth: 520,
               color: "rgba(255,255,255,0.9)",
               lineHeight: 1.8,
             }}

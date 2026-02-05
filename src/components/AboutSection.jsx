@@ -34,12 +34,8 @@ const AboutSection = () => {
             spacing={3}
             alignItems="center"
             justifyContent="center"
-            sx={{ maxWidth: 600, mx: "auto" }}
+            sx={{ mx: "auto" }}
           >
-            <Typography variant="h2" sx={{ fontSize: { xs: 28, md: 36 } }}>
-              O mně
-            </Typography>
-
             <Typography
               variant="h2"
               sx={{
@@ -55,7 +51,6 @@ const AboutSection = () => {
               variant="body1"
               sx={{
                 opacity: 0.85,
-                maxWidth: 550,
                 mx: "auto",
                 fontSize: { xs: 15, md: 17 },
                 whiteSpace: "pre-line",
@@ -67,24 +62,12 @@ const AboutSection = () => {
 
               {expanded &&
                 `
-    
-V roce 1987, když mi bylo 9 let, jsem začala aktivně jezdit na koni.
-Později jsem se vyučila v Národním hřebčíně Kladruby nad Labem v oboru „chovatel koní a jezdec z povolání“, kde jsem se poprvé osobně setkala s pointery, které choval náš třídní profesor pan Ing. Karel Regner.
-
-O řadu let později, když jsem se rozhodla pořídit si svou první fenku
-pointera, stal se pan Regner znovu mým učitelem a rádcem. Právě tato fenka,
-Cedra z Vinných Tratí (*2012), mě přivedla k hlubšímu zájmu o výživu psů,
-protože byla velmi špatně krmitelná.
-
-Postupem času se počet našich psů rozrostl a v roce 2019 jsem založila
-chovatelskou stanici. V současné době žijeme s osmi psy (7× pointer,
-1× portugalský ohař) a máme odchované čtyři vrhy štěňat pointerů.
-
-Protože vím, jak obrovská a nepřehledná je dnešní nabídka krmiv, rozhodla
-jsem se absolvovat kurz výživového poradenství pro psy u specialistky
-paní Adély Palacké. Kurz jsem úspěšně dokončila a dnes jsem připravena
-pomoci i vám najít správnou výživu pro vašeho psa.
-`}
+              V roce 1987, když mi bylo 9 let, jsem začala aktivně jezdit na koni.
+              Později jsem se vyučila v Národním hřebčíně Kladruby nad Labem v oboru „chovatel koní a jezdec z povolání“, kde jsem se poprvé osobně setkala s pointery, které choval náš třídní profesor pan Ing. Karel Regner.
+              O řadu let později, když jsem se rozhodla pořídit si svou první fenku pointera, stal se pan Regner znovu mým učitelem a rádcem. Právě tato fenka, Cedra z Vinných Tratí (*2012), mě přivedla k hlubšímu zájmu o výživu psů, protože byla velmi špatně krmitelná.
+              Postupem času se počet našich psů rozrostl a v roce 2019 jsem založila chovatelskou stanici. V současné době žijeme s osmi psy (7× pointer, 1× portugalský ohař) a máme odchované čtyři vrhy štěňat pointerů.
+              Protože vím, jak obrovská a nepřehledná je dnešní nabídka krmiv, rozhodla jsem se absolvovat kurz výživového poradenství pro psy u specialistky paní Adély Palacké. Kurz jsem úspěšně dokončila a dnes jsem připravena pomoci i vám najít správnou výživu pro vašeho psa.
+              `}
             </Typography>
             <Box sx={{ mt: 3 }}>
               <Button
@@ -108,7 +91,6 @@ pomoci i vám najít správnou výživu pro vašeho psa.
         <Box
           sx={{
             width: "100%",
-            maxWidth: 900,
             mx: "auto",
             mt: 6,
           }}

@@ -140,7 +140,7 @@ const ContactSection = () => {
               sx={{ py: 0.5 }}
             >
               <EmailIcon />
-              <Typography variant="body2">alibaba1@mujmail.cz</Typography>
+              <Typography variant="body2">info@krmaninamiru.cz</Typography>
             </Stack>
           </Stack>
         </Stack>
