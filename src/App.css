@@ -53,3 +53,15 @@
 .read-the-docs {
   color: #888;
 }
+
+.footerLink {
+  color: #ff6b6b;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.footerLink:hover {
+  color: #ff3b3b;
+  text-decoration: underline;
+}
