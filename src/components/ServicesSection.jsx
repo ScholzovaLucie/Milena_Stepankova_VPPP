@@ -39,7 +39,7 @@ export const services = [
         <li>Plán krmení pro nabírání hmotnosti</li>
         <li>Dlouhodobě udržitelný režim</li>
         <li>Průběžná kontrola kondice psa</li>
-        <li>Neomezené konzultace po donu 1,5 měsíce.</li>
+        <li>Neomezené konzultace po dobu 1,5 měsíce.</li>
         <li>Zhodnocení průběhu změny a kondice po změně.</li>
         <li>V případě potřeby konzultace po dobu 3 měsíců.</li>
       </Typography>
