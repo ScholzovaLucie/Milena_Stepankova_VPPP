@@ -17,7 +17,8 @@ const Footer = () => {
           direction={{ xs: "column", md: "row" }}
           spacing={2}
           justifyContent="space-between"
-          alignItems={{ xs: "flex-start", md: "center" }}
+          alignItems={{ xs: "center", md: "center" }}
+          textAlign="center"
         >
           <Typography variant="body2">
             © {new Date().getFullYear()} Milena Štěpánková – výživové
@@ -31,6 +32,7 @@ const Footer = () => {
               alignItems: "center",
               gap: 1,
               flexWrap: "wrap",
+              justifyContent: "center",
             }}
           >
             Web vytvořen s láskou ke psům i lidem{" "}

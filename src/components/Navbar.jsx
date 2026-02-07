@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Box,
@@ -8,20 +8,13 @@ import {
   IconButton,
   Button,
   Stack,
+  Drawer,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import PetsIcon from "@mui/icons-material/Pets";
-
-const navItems = [
-  { label: "Úvod", href: "#hero" },
-  { label: "O mně", href: "#about" },
-  { label: "Služby", href: "#services" },
-  { label: "FAQ", href: "#faq" },
-  { label: "BCS návody", href: "#bcs-guide" },
-  { label: "Fotky", href: "#photos-galery" },
-];
+import Logo from "/logo_2.png";
 
 const Navbar = ({ navItems, handleNavClick }) => {
+  const [open, setOpen] = useState(false);
   return (
     <AppBar
       position="fixed"
@@ -42,20 +35,11 @@ const Navbar = ({ navItems, handleNavClick }) => {
             sx={{ flexGrow: 1 }}
           >
             <Box
-              sx={{
-                width: 40,
-                height: 40,
-                borderRadius: 3,
-                bgcolor: "primary.main",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "common.white",
-              }}
-            >
-              {/* sem si můžeš dát vlastní logo z .af souboru */}
-              <PetsIcon />
-            </Box>
+              component="img"
+              src={Logo}
+              alt="Logo"
+              sx={{ width: 60, height: 60, objectFit: "contain" }}
+            />
             <Box>
               <Typography
                 variant="subtitle1"
@@ -106,6 +90,53 @@ const Navbar = ({ navItems, handleNavClick }) => {
           </IconButton>
         </Toolbar>
       </Container>
+      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+        <Box
+          sx={{
+            width: 280,
+            p: 3,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 1.5,
+          }}
+          role="presentation"
+        >
+          {navItems.map((item) => (
+            <Button
+              key={item.href}
+              color="inherit"
+              onClick={() => {
+                handleNavClick(item.href);
+                setOpen(false);
+              }}
+              sx={{
+                justifyContent: "flex-start",
+                fontWeight: 600,
+                py: 1.2,
+              }}
+            >
+              {item.label}
+            </Button>
+          ))}
+
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={() => {
+              handleNavClick("#contact");
+              setOpen(false);
+            }}
+            sx={{
+              mt: 1,
+              py: 1.2,
+            }}
+          >
+            Domluvit konzultaci
+          </Button>
+        </Box>
+      </Drawer>
     </AppBar>
   );
 };
